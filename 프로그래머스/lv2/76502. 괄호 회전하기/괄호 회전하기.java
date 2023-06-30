@@ -2,10 +2,12 @@ import java.util.*;
 class Solution {
     public int solution(String s) {
         int answer = 0;
+        StringBuilder sb;
         for(int i=0;i<s.length();i++){
-            s = s.substring(1) + s.substring(0,1);
+            sb = new StringBuilder();
+            sb.append(s.substring(i+1)).append(s.substring(0,i+1));
             Stack<Integer> stack = new Stack<>();
-            for(char c:s.toCharArray()){
+            for(char c:sb.toString().toCharArray()){
                 if(stack.isEmpty()){
                     stack.push((int)c);
                     continue;
