@@ -5,21 +5,13 @@ class Solution {
         Queue<String> cache = new LinkedList<>();
         for(String city:cities){
             city = city.toUpperCase();
-            if(cache.size() < cacheSize){
-                if(cache.contains(city)){
-                    cache.remove(city);
-                    answer +=1;
-                }else{
-                    answer += 5;    
-                }
-                cache.add(city);
-                continue;
-            }
             if(cache.contains(city)){
                 cache.remove(city);
                 answer +=1;
             }else{
-                cache.poll();
+                if(cache.size() == cacheSize){
+                    cache.poll();   
+                }
                 answer += 5;
             }
             cache.add(city);
