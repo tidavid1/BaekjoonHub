@@ -11,6 +11,5 @@ class Solution {
             sb.insert(0, i);
         }
         return sb.toString();
-    
     }
 }
