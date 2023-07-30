@@ -1,30 +1,14 @@
 class Solution {
     public String solution(String code) {
-        String answer = "";
-        boolean flag = true;
-        char[] temp = code.toCharArray();
-        for(int i=0; i< temp.length;i++){
-            if(flag){
-                if(temp[i] == '1'){
-                    flag = false;
-                }else{
-                    if(i%2 == 0){
-                        answer += temp[i];
-                    }
-                }
-            }else{
-                if(temp[i] == '1'){
-                    flag = true;
-                }else{
-                    if(i%2 == 1){
-                        answer += temp[i];
-                    }
-                }
+        StringBuilder sb = new StringBuilder();
+        int mode = 0;
+        for(int i=0;i<code.length();i++){
+            if(code.charAt(i) == '1'){
+                mode = mode == 0 ? 1 : 0;
+                continue;
             }
+            sb.append(i%2==mode ? code.charAt(i) : "");
         }
-        if (answer == ""){
-            answer = "EMPTY";
-        }
-        return answer;
+        return sb.length() == 0 ? "EMPTY" : sb.toString();
     }
 }
