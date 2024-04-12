@@ -4,11 +4,6 @@ import java.util.Queue;
 
 class Solution {
 
-    public static void main(String[] args) {
-        var s = new Solution();
-        System.out.println(s.solution(5, new int[][]{{1, 2, 4}, {1, 3, 1}, {3, 4, 1}, {4, 2, 1}, {2, 5, 1}}, 4));
-    }
-
     private final Queue<Integer> queue = new LinkedList<>();
     private int[][] arrays;
     private int[] results;
