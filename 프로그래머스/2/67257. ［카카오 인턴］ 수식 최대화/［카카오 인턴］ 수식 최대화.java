@@ -2,10 +2,6 @@ import java.util.*;
 
 class Solution {
 
-    public static void main(String[] args) {
-        System.out.println(new Solution().solution("50*6-3*2"));
-    }
-
     private final char[] operators = {'*', '-', '+'};
     private final boolean[] visited = new boolean[3];
     private final Deque<Long> valueDeque = new LinkedList<>();
